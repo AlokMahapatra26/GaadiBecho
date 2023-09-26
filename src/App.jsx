@@ -1,11 +1,28 @@
-import { useState } from 'react'
+import { BrowserRouter as Router , Routes , Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Profile from "./pages/Profile"
+import CreateListing from "./pages/CreateListing"
+import ForgotPassword from "./pages/ForgotPassword"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Header from "./components/Header"
 
 function App() {
   
 
   return (
     <>
-     <h1 className=''>hello world</h1>
+     <Router>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword/>}></Route>
+        <Route path="/profile" element={<Profile/>}></Route>
+        <Route path="/create-listing" element={<CreateListing/>}></Route>
+      </Routes>
+     </Router>
     </>
   )
 }
