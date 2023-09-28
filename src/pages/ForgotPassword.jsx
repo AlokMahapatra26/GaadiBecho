@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import { useState } from 'react'
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 export default function ForgotPassword() {
 
@@ -23,11 +24,23 @@ export default function ForgotPassword() {
      }))
    }
 
+   //FIREBASE CODE FOR FORGET PASSWORD
+   async function onSubmit(e){
+    e.preventDefault();
+    try{
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth , email);
+      alert("Check your Email for rest password");
+    }catch(error){
+      alert("Something went wrong")
+    }
+   }
+
   return (
     <>
     <section className='flex-1 h-[calc(100vh-3rem)]  flex justify-center items-center ' >
 
-<form className='bg-white flex flex-col items-center justify-center  p-4 border-black border'>
+<form className='bg-white flex flex-col items-center justify-center  p-4 border-black border' onSubmit={onSubmit}>
  <h1 className='text-2xl m-2'>Forgot Password</h1>
 
  
