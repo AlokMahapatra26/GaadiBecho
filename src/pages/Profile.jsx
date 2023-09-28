@@ -32,6 +32,8 @@ export default function Profile() {
       <div className='  flex flex-col justify-center items-center p-4'>
       <p className='text-md mt-4'><span>Name : </span>{name}</p>
       <p className='text-md mt-2'><span>Email : </span>{email}</p>
+      
+      <button className="p-2 border border-black mt-4" onClick={()=>{navigate("/create-listing")}}>Sell Your Vehicle</button>
       <button onClick={onLogout} className='  p-2  border border-black hover:bg-black hover:text-white transition m-x-auto mt-4'>Logout</button>
       </div>
       
