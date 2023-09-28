@@ -24,6 +24,8 @@ export default function Header() {
       })
     },[])
 
+    console.log(auth);
+
   return (
     <>
     <header className="text-gray-600 body-font border border-black">
@@ -35,7 +37,7 @@ export default function Header() {
     <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto ">
       <a className="mr-5 hover:text-gray-900 cursor-pointer" onClick={()=>{navigate("/")}}>Home</a>
       <a className="mr-5 hover:text-gray-900 cursor-pointer" onClick={()=>{navigate("/offer")}}>Offers</a>
-      <a className="mr-5 hover:text-gray-900 cursor-pointer" onClick={()=>{pageState === "profile" ? navigate("profile") : navigate("/register")}}>{pageState}</a>
+      <a className="mr-5 hover:text-gray-900 cursor-pointer" onClick={()=>{pageState === "Profile" ? navigate("profile") : navigate("/register")}}>{pageState}</a>
       
     </nav>
  
